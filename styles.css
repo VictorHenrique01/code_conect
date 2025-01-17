@@ -1,0 +1,61 @@
+:root{
+    --cor-de-fundo: #00090E;
+    --cor-de-texto: #E1E1E1;
+    --cor-primaria: #81FE88;
+    --cor-secundaria: #888888;
+    --cor-tag: #171D1F;
+    --font-family: "Prompt", sans-serif;
+    --itens-de-fundo: #171D1F;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-texto);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100vh;
+    gap: 27px;
+    padding: 56px 0;
+}
+
+aside{
+    background-color: var(--itens-de-fundo);
+    border-radius: 10px;
+
+    padding: 40px 16px;
+    text-align: center;
+
+}
+
+.lista-links{
+    display:flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 80px;
+    align-items: center;
+    list-style-type: none;
+}
+
+.lista-links li a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 10px;
+    align-items: center;
+    color: var(--cor-de-texto);
+    font-size: 20px;
+}
+
+.botao-destaque{
+    padding: 10px 15px;
+    background-color: #81FE88;
+}

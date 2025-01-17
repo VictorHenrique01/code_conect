@@ -1,0 +1,3 @@
+Aqui vai ser um bloco de anotações para aprendizado de algo novo:
+
+<aside> = tag que representa um menu lateral.
