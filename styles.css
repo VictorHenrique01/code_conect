@@ -56,6 +56,12 @@ aside{
 }
 
 .botao-destaque{
+    color: var(--cor-primaria);
     padding: 10px 15px;
-    background-color: #81FE88;
+    border-radius: 8px;
+    border: 3px solid var(--cor-primaria);
+}
+
+.botao-destaque:hover{
+    background-color: #888888;
 }
