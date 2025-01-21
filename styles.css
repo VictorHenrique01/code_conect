@@ -55,11 +55,14 @@ aside{
     font-size: 20px;
 }
 
-.botao-destaque{
+.lista-links li:first-of-type a{
     color: var(--cor-primaria);
-    padding: 10px 15px;
+}
+
+.botao-destaque{
+    padding: 12px 18px;
     border-radius: 8px;
-    border: 3px solid var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
 }
 
 .botao-destaque:hover{
