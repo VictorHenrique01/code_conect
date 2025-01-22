@@ -1,3 +1,55 @@
 Aqui vai ser um bloco de anotações para aprendizado de algo novo:
 
 <aside> = tag que representa um menu lateral.
+
+--------------------------
+
+usar tag <textarea> ao invés de tag <input/> quando é para o usuário digitar um texto extenso
+no campo de entrada.
+
+--------------------------
+
+.botao-descartar{
+    position: relative;
+}
+
+position: relative; -> essa propriedade css permite que você consiga
+manipular o ícone que fica ao lado da palavra de um botão.
+
+--------------------------
+
+.botao-descartar::after{
+    content: "";
+    background-image: url("./img/trash.svg");
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+position: absolute; -> manipula o espaço do ícone dentro do botão
+
+transform: translateY(-50%); -> usada para mover um elemento verticalmente
+no eixo Y
+
+-50%: valor calculado com base na altura do próprio elemento.
+* valor negativo move o elemento pra cima
+* valor positivo move o elemento pra baixo
+--------------------------
+
+.main-imagem{
+    object-fit: cover;
+}
+
+object-fit:  -> propriedade que controla como a imagem ou vídeo
+se ajusta ao tamanho do contêiner que o contêm.
+
+cover -> faz com que a img cubra totalmente o contâiner, mantém
+a proporção original da imagem sem distorcer.
+
+Comparação com outros valores de object-fit:
+• contain: Faz a imagem se ajustar ao contêiner sem cortes, mas podem aparecer sobras (áreas vazias).
+• fill: Faz a imagem esticar ou comprimir para preencher o contêiner, mas pode distorcer a proporção.
+• none: Mostra a imagem em seu tamanho original, sem qualquer ajuste.
+• scale-down: Mostra a menor versão entre none e contain.
+
+--------------------------
