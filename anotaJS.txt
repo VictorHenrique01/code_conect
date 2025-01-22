@@ -1,2 +1,41 @@
 Anotações Javascript:
 
+No código apresentado, o objetivo é criar um botão que simula a funcionalidade de abrir o seletor de arquivos para 
+o usuário carregar uma imagem, mas escondendo o elemento `<input type="file">` visualmente.
+
+# Explicação do que foi feito:
+
+1. *HTML:*
+
+    <button id="upload-btn">Carregar imagem</button>
+    <input type="file" id="imagem-upload" accept="image/" style="display: none;"/>
+
+  - O botão `<button id="upload-btn">Carregar imagem</button>` serve como o elemento visível que o usuário clicará.
+  - O `<input type="file" id="imagem-upload" style="display: none;">` é o campo de upload de arquivo, 
+  mas está oculto por causa do estilo `display: none`.
+
+2. *JavaScript:*
+
+    const uploadBtn = document.getElementById("upload-btn");
+    const inputUpload = document.getElementById("imagem-upload");
+
+    uploadBtn.addEventListener("click", () => {
+    inputUpload.click();
+    })
+
+  - `const uploadBtn = document.getElementById("upload-btn");`: Seleciona o botão no HTML.
+  - `const inputUpload = document.getElementById("imagem-upload");`: Seleciona o campo de upload de arquivos.
+
+3. *Evento de clique:*
+  - `uploadBtn.addEventListener("click", () => { inputUpload.click(); });`:
+    - Adiciona um ouvinte de evento ao botão.
+    - Quando o botão é clicado, ele **dispara o método `.click()` no elemento escondido `<input>`**.
+    - Isso abre o seletor de arquivos como se o usuário tivesse clicado diretamente no campo `<input type="file">`.
+
+
+# Resultado:
+- O botão "Carregar imagem" simula a funcionalidade de abrir o seletor de arquivos sem expor o elemento `<input type="file">` na interface.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+!
