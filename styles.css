@@ -2,7 +2,7 @@
     --cor-de-fundo: #00090E;
     --cor-de-texto: #E1E1E1;
     --cor-primaria: #7C00FE;
-    --cor-secundaria: #888888;
+    --cor-secundaria: #E5D9F2;
     --cor-tag: #171D1F;
     --font-family: "Prompt", sans-serif;
     --itens-de-fundo: #171D1F;
@@ -167,7 +167,7 @@ textarea{
 }
 
 .botao-descartar:hover{
-    background-color: var(--cor-secundaria);
+    background-color: #888888;
     font-weight: bold;
 }
 

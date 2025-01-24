@@ -38,4 +38,7 @@ o usuário carregar uma imagem, mas escondendo o elemento `<input type="file">` 
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-!
+new Promise -> promessa no js costuma ser uma incógnita, pois é algo que não sabemos se vai dar certo ou não.
+
+irá fazer a leitura e realizar um processo assíncrono para retornar algo que não está acontecendo ainda, ou que já recusado
+ou resolvido
