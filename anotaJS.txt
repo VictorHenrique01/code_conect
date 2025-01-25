@@ -38,7 +38,53 @@ o usuário carregar uma imagem, mas escondendo o elemento `<input type="file">` 
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-new Promise -> promessa no js costuma ser uma incógnita, pois é algo que não sabemos se vai dar certo ou não.
+function lerConteudoDoArquivo(arquivo){
+    return new Promise((resolve, reject) => {
+        const leitor = new FileReader() //permite ler o conteúdo do arquivo;
+        leitor.onload = () => {
+            resolve({ url: leitor.result, nome: arquivo.name}) 
+        }
 
-irá fazer a leitura e realizar um processo assíncrono para retornar algo que não está acontecendo ainda, ou que já recusado
-ou resolvido
+        leitor.onerror = () => {
+            reject(`Erro na leitura do arquivo ${arquivo.name}`)
+        }
+
+        leitor.readAsDataURL(arquivo)
+    })
+}
+
+Função lerConteudoDoArquivo(arquivo)
+Essa função tem o objetivo de ler o conteúdo de um arquivo (como imagens ou documentos) usando o FileReader, que é uma 
+funcionalidade nativa do JavaScript para manipular arquivos no navegador.
+
+Passo a passo:
+
+1. return new Promise((resolve, reject) => {...})
+
+• A função retorna uma Promise.
+Uma Promise é como uma “promessa” de que algo será feito no futuro (neste caso, ler o arquivo).
+• resolve: usado para retornar o resultado da leitura quando tudo dá certo.
+• reject: usado para retornar um erro, caso algo dê errado.
+
+2. const leitor = new FileReader()
+• Cria um objeto do tipo FileReader que permite ler o conteúdo do arquivo fornecido.
+
+3. leitor.onload = () => {...}
+• Define o que acontece quando o arquivo é lido com sucesso.
+• leitor.result: contém o conteúdo do arquivo (em formato de URL base64).
+• arquivo.name: pega o nome do arquivo.
+• O resultado e o nome do arquivo são enviados para o resolve.
+
+4. leitor.onerror = () => {...}
+• Define o que acontece se ocorrer um erro ao tentar ler o arquivo.
+• reject: envia uma mensagem de erro com o nome do arquivo que falhou.
+
+5. leitor.readAsDataURL(arquivo)
+• Inicia a leitura do arquivo em formato Data URL (base64).
+Esse formato é muito usado para exibir imagens no navegador.
+
+Resumo:
+
+Essa função lê um arquivo (como uma imagem) e retorna uma Promise.
+• Se a leitura for bem-sucedida: o resultado da leitura (como uma URL) e o nome do arquivo são enviados no resolve.
+• Se houver um erro: o reject é chamado com uma mensagem de erro.
